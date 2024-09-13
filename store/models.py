@@ -36,3 +36,13 @@ class Order(models.Model):
     ]
     placed_at = models.DateField(auto_now_add=True)
     payment_status = models.CharField(max_length=1, choices=PAYMENT_STATUS_CHOICES, default=PAYMENT_STATUS_PENDING)
+
+
+class Address(models.Model):
+    street = models.CharField(max_length=255)
+    city = models.CharField(max_length = 255)
+    customer =  models.ForeignKey(Customer, on_delete=models.CASCADE)
+
+class Collection(models.Model):
+    itemName = models.CharField(max_length=255)
+    itemID = model.
