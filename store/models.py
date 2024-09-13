@@ -18,7 +18,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.IntegerField()
     last_update = models.DateField(auto_now=True)
-    collection = models.ForeignKey(Collection,on_delete=models.PROTECT)
+    # collection = models.ForeignKey(Collection,on_delete=models.PROTECT)
+    collection = models.ForeignKey(Collection, on_delete=models.CASCADE, null=True, blank=True)
     promotions = models.ManyToManyField(Promotion)
 
 class Customer(models.Model):
@@ -48,7 +49,9 @@ class Order(models.Model):
     ]
     placed_at = models.DateField(auto_now_add=True)
     payment_status = models.CharField(max_length=1, choices=PAYMENT_STATUS_CHOICES, default=PAYMENT_STATUS_PENDING)
-    customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+    # customer = models.ForeignKey(Customer, on_delete=models.PROTECT)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True, blank=True)
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.PROTECT)
