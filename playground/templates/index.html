@@ -2,46 +2,140 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>SHOE STORE</title>
+    <title>My E-Commerce Site</title>
+    <style>
+      /* General page styling */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      /* Navigation bar styling */
+      .navbar {
+        background-color: #333;
+        overflow: hidden;
+        padding: 15px 0;
+      }
+      .navbar a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .navbar a:hover {
+        background-color: #575757;
+      }
+      /* Header Section */
+      .header {
+        padding: 60px;
+        text-align: center;
+        background: #4caf50;
+        color: white;
+      }
+      .header h1 {
+        font-size: 50px;
+      }
+      /* Product Section */
+      .products {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+      .product-card {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        width: 300px;
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .product-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      .product-card h3 {
+        font-size: 24px;
+        margin: 10px 0;
+      }
+      .product-card p {
+        font-size: 18px;
+        color: #555;
+      }
+      .product-card button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .product-card button:hover {
+        background-color: #45a049;
+      }
+      /* Footer */
+      .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <article class="product">
-      <h2 class="product-title">Converse Chuck Taylor All Star Low Top</h2>
-      <img
-        src="challenges.jpg"
-        alt="Chuck Taylor All Star Shoe"
-        height="250"
-        width="250"
-      />
-      <p class="price"><strong>$65.00</strong></p>
-      <p class="shipping">Free shipping</p>
-      <p class="sale">Sale</p>
-      <p class="product-description">
-        Ready to dress up or down, these classic canvas Chucks are an everyday
-        wardrobe staple.
-      </p>
-      <a href="https://converse.com" target="_blank" class="more-info"
-        >More information &rarr;</a
-      >
-      <div class="colors">
-        <div class="color"></div>
-        <div class="color color-blue"></div>
-        <div class="color color-red"></div>
-        <div class="color color-yellow"></div>
-        <div class="color color-green"></div>
-        <div class="color color-brown"></div>
-      </div>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </div>
 
-      <h3 class="details-title">Product details</h3>
-      <ul class="details-list">
-        <li>Lightweight, durable canvas sneaker</li>
-        <li>Lightly padded footbed for added comfort</li>
-        <li>Iconic Chuck Taylor ankle patch.</li>
-      </ul>
-      <button class="add-cart">Add to cart</button>
-    </article>
+    <!-- Header Section -->
+    <div class="header">
+      <h1>Welcome to Our Store</h1>
+      <p>Find the best products at amazing prices!</p>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300" alt="Product 1" />
+        <h3>Product 1</h3>
+        <p>$25.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300" alt="Product 2" />
+        <h3>Product 2</h3>
+        <p>$30.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300" alt="Product 3" />
+        <h3>Product 3</h3>
+        <p>$45.00</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2024 My E-Commerce Site. All rights reserved.</p>
+    </div>
   </body>
 </html>
