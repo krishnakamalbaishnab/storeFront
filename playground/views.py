@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
+from store.models import Product
 # Create your views here.
 
 def say_hello(request):
-    return HttpResponse("Hello Django")
+    Product.objects.all()
 
-def calculate(request):
-    x = 5
-    y = 6
-    return HttpResponse(x+y)
+    return HttpResponse("Hello World, Django -Testing")
 
-def usingTemplates(request):
-    return render(request, 'index.html')
+
+
 
