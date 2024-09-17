@@ -2,9 +2,16 @@
   <body>
     <h1>Hello World!</h1>
     <p>Let's Filter Product</p>
+    <h2>The Product list :</h2>
     <ul>
       {% for product in product %}
       <li>{{ product.title}}</li>
+      {% endfor %}
+    </ul>
+    <h2>The Email list :</h2>
+    <ul>
+      {% for customer in customer %}
+      <li>{{ customer.email}}</li>
       {% endfor %}
     </ul>
   </body>

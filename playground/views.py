@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.core.exceptions import ObjectDoesNotExist
-from store.models import Product
+#from django.http import HttpResponse
+#from django.core.exceptions import ObjectDoesNotExist
+from store.models import Product, Customer
+
 # Create your views here.
 
 def say_hello(request):
@@ -13,7 +14,16 @@ def say_hello(request):
 
 
 def filtering(request):
-    querySet = Product.objects.filter(price__range=(20,30))
+    
+    productList = Product.objects.filter(price__range=(20,30))
 
-    return render(request , 'hello.html', {'product':list(querySet)})
+    emailList = Customer.objects.filter(email__icontains= '.com')
+#TODO: testing
+    # collectionList = Collection.objects.filter(featuredProduct__isnull = True)
+
+    # inventory = Product.objects.filter(inventory__lt=10)
+
+
+
+    return render(request , 'hello.html', {'product': list(productList),'customer':list(emailList)})
 
