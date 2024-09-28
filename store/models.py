@@ -10,6 +10,11 @@ class Collection(models.Model):
     title =models.CharField(max_length=255)
     featuredProduct = models.ForeignKey('Product', on_delete=models.SET_NULL, null=True, related_name='+')
     
+    # def  __str__(self) -> str:
+    #     return self.title
+
+    # class Meta:
+    #     ordering =['title']
     
 
 class Product(models.Model):
@@ -22,6 +27,11 @@ class Product(models.Model):
     # collection = models.ForeignKey(Collection,on_delete=models.PROTECT)
     collection = models.ForeignKey(Collection, on_delete=models.CASCADE, null=True, blank=True)
     promotions = models.ManyToManyField(Promotion)
+
+    # def __str__(self) -> str:
+    #     return self.title
+    # class Meta:
+    #     ordering = ['title']
 
 class Customer(models.Model):
     MEMBERSHIP_BRONZE = 'B'
@@ -38,6 +48,9 @@ class Customer(models.Model):
     phone = models.CharField(max_length=255)
     birthDate = models.DateTimeField(null=True)
     membership = models.CharField(max_length=1, choices=MEMBERSHIP_CHOICES, default=MEMBERSHIP_BRONZE)
+
+    # class Meta:
+    #     ordering = ['firstName']
 
 class Order(models.Model):
     PAYMENT_STATUS_PENDING = 'P'
