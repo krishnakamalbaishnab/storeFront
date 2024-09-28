@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator
 from django.db import models
 
 # Create your models here.
@@ -20,18 +21,21 @@ class Collection(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
-    description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    inventory = models.IntegerField()
+    description = models.TextField(null= True, blank=True)
+    price = models.DecimalField(
+        max_digits=6, 
+        decimal_places=2,
+        validators= [MinValueValidator(1)])
+    inventory = models.IntegerField(validators=[MinValueValidator(0)])
     last_update = models.DateField(auto_now=True)
     # collection = models.ForeignKey(Collection,on_delete=models.PROTECT)
     collection = models.ForeignKey(Collection, on_delete=models.CASCADE, null=True, blank=True)
-    promotions = models.ManyToManyField(Promotion)
+    promotions = models.ManyToManyField(Promotion,blank=True)
 
-    # def __str__(self) -> str:
-    #     return self.title
-    # class Meta:
-    #     ordering = ['title']
+    def __str__(self) -> str:
+        return self.title
+    class Meta:
+        ordering = ['title']
 
 class Customer(models.Model):
     MEMBERSHIP_BRONZE = 'B'
