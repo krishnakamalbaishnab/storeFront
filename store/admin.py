@@ -36,6 +36,7 @@ class CustomerAdmin(admin.ModelAdmin):
     list_editable = ['membership']
     # ordering = ['firstName' , 'lastName']
     list_per_page =10
+    search_fields = ['firstName__istartswith', 'lastName__istartswith']
     @admin.display(ordering='order_count')
     def order_count(self, order):
         return order.order_count
