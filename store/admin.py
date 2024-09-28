@@ -32,10 +32,18 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(models.Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display =['firstName', 'lastName', 'membership']
+    list_display =['firstName', 'lastName', 'membership','order_count']
     list_editable = ['membership']
     # ordering = ['firstName' , 'lastName']
     list_per_page =10
+    @admin.display(ordering='order_count')
+    def order_count(self, order):
+        return order.order_count
+
+    def get_queryset(self,request):
+        return super().get_queryset(request).annotate(
+            order_count = Count('order')
+        )
 
 
 @admin.register(models.Collection)
