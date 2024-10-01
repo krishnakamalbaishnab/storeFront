@@ -21,7 +21,7 @@ StoreFront is a Django-based e-commerce web application. This project allows use
 ### Steps : Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/storefront.git
+git clone https://github.com/krishnakamalbaishnab/storeFront
 ```
 - Navigate to the project directory:
 
