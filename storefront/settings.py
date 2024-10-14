@@ -92,7 +92,7 @@ DATABASES = {
         "NAME": "storefront",
         "HOST":"localhost",
         "USER":"root",
-        "PASSWORD":'baishnabdatabase@02'
+        "PASSWORD":'developer@02'
     }
 }
 
