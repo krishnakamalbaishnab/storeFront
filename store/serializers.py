@@ -7,7 +7,7 @@ class ProductSerializers(serializers.ModelSerializer):
     #another method of writing the model serializer
     class Meta:
         model = Product
-        fields = ['id','title','price','priceWithTax','collection']
+        fields = ['id','title','slug','description','','price','priceWithTax','collection']
 
     # id = serializers.IntegerField()
     # title = serializers.CharField(max_length=255)
